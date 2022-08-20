@@ -1,0 +1,30 @@
+let valorNum1 = document.getElementById("num1");
+let valorNum2 = document.getElementById("num2");
+let operador = document.getElementById("operacao");
+let calcOperacao = document.getElementById("botao-calcular");
+
+function Calculadora() {
+  let op = operador.value;
+  let valorDig1 = parseFloat(valorNum1.value);
+  let valorDig2 = parseFloat(valorNum2.value);
+  let resposta;
+
+  if (op === "+") {
+    resposta = valorDig1 + valorDig2;
+    alert(resposta);
+  } else if (op === "-") {
+    resposta = valorDig1 - valorDig2;
+    alert(resposta);
+  } else if (op === "*") {
+    resposta = valorDig1 * valorDig2;
+    alert(resposta);
+  } else if (op === "/") {
+    if (valorNum2 === 0) {
+      alert("O denominador não pode ser zero!!");
+    } else {
+      resposta = valorDig1 / valorDig2;
+      alert(resposta);
+    }
+  }
+}
+calcOperacao.addEventListener("click", Calculadora);
